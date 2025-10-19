@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'patrick';
+    src: url(../font/patrick.ttf) format('truetype');
+}
+
+:root {
+    --blue: rgb(6, 226, 255);
+    --pink: rgb(255, 0, 221);
+    --green: rgb(0, 255, 13);
+    --black: rgb(0, 0, 0);
+    --darkgray: rgb(20, 20, 20);
+    --white: white;
+}
+
+body {
+
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    perspective: 500px;
+    margin: 100px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.below {
+    margin-top: 300px;
+}
+
+.cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 0, 0, 45deg);
+
+}
+
+.cube > div {
+    font-family: patrick;
+    font-size: 50px;
+}
+
+.face {
+    color: var(--white);
+    width: 200px;
+    height: 200px;
+    background: var(--darkgray);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.front  { transform: translateZ(100px); }
+.back   { transform: translateZ(-100px) rotateY(180deg); }
+.left   { transform: translateX(-100px) rotateY(-90deg); }
+.right  { transform: translateX(100px) rotateY(90deg); }
+.top    { transform: translateY(-100px) rotateX(90deg); }
+.bottom    { transform: translateY(100px) rotateX(-90deg); }
+
+
+.bottomshadow,
+.bottomshadow2,
+.bottomshadow3 {
+    width: 100%;
+    height: 100%;
+    transform: translateY(500px) rotateX(-90deg);
+}
+
+.bottomshadow  { box-shadow: 0 0 50px 100px var(--blue); background-color: var(--blue);}
+.bottomshadow2 { box-shadow: 0 0 50px 100px var(--pink); background-color: var(--pink);}
+.bottomshadow3 { box-shadow: 0 0 50px 100px var(--green); background-color: var(--green);}
+
+.pink > div:nth-child(n+3):nth-child(-n+6) {
+    background: linear-gradient(var(--darkgray), var(--pink));
+}
+.green > div:nth-child(n+3):nth-child(-n+6) {
+    background: linear-gradient(var(--darkgray), var(--green));
+}
+.blue > div:nth-child(n+3):nth-child(-n+6) {
+    background: linear-gradient(var(--darkgray), var(--blue));
+}
+
+@keyframes turn {
+    from {
+        transform: rotateX(-45deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(-45deg) rotateY(360deg);
+    }
+}

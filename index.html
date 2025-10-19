@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <nav
+        class="relative bg-gray-800/50 after:pointer-events-none after:absolute after-0 after:bottom-0 after:h-px after:bg-white/10">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button" command="--toggle" commandfor="mobile-menu"
+                        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+                        <span class="absolute .5"></span>
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex shrink-0 items-center">
+                        <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                            alt="Your Company" class="h-8 w-auto" />
+                    </div>
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="./index.html" aria-current="page"
+                                class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white">Qui je suis
+                                ?</a>
+                            <a href="./project.html"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
+                                projets actuel</a>
+                            <a href="#"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
+                                formations</a>
+                            <a href="#"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
+                                compétences</a>
+                            <a href="./loisirs.html"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Loisirs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+            <div class="space-y-1 px-2 pt-2 pb-3">
+                <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+                <a href="#" aria-current="page"
+                    class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
+            </div>
+        </el-disclosure>
+    </nav>
+
+
+
+    <div class="bg-gray-900 min-h-screen py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:mx-0">
+                <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Qui je suis ?</h2>
+                <p class="mt-2 text-lg/8 text-gray-300">Présentation</p>
+            </div>
+            <div
+                class="flex mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-700 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <article class="flex max-w-xl flex-col items-start justify-between">
+                    <img src="./img/DSC01293.jpg" alt="Marketing image" class="w-full rounded-lg mb-4">
+                    <div class="group relative grow">
+                        <h3 class="mt-3 text-lg/6 font-semibold text-white ">
+                            <span class="absolute"></span>
+                            Moi ? C'est Driss Costa, un etudiant cherchant une alternance.
+                        </h3>
+                        <p class="mt-5 line-clamp-10 text-sm/6 text-gray-400">Actuellement étudiant au sein de
+                            l’organisme de formation Epitech, je suis à la recherche d’une alternance d’une durée de 3
+                            mois dans le domaine du développement web. Titulaire d’un Bachelor RNCP de niveau 5, j’ai
+                            acquis de solides bases techniques que je continue de renforcer à travers des projets
+                            personnels et diverses sources d’apprentissage. Passionné par la programmation depuis l’âge
+                            de 14 ans, je m’investis pleinement dans mon parcours pour évoluer en tant que développeur
+                            compétent et polyvalent.</p>
+                    </div>
+                </article>
+
+                <article class="flex max-w-xl flex-col items-start justify-between">
+                    <img src="./img/code-snapshot.png" alt="Marketing image" class="w-full rounded-lg mb-4">
+                    <div class="group relative grow">
+                        <h3 class="mt-3 text-lg/6 font-semibold text-white ">
+                            <span class="absolute"></span>
+                            Mon savoir faire
+                        </h3>
+                        <p class="mt-5 line-clamp-10 text-sm/6 text-gray-400">L’univers de l’informatique me passionne
+                            depuis de nombreuses années. J’ai consacré beaucoup de temps à explorer ses multiples
+                            facettes et je suis conscient qu’il reste toujours énormément à apprendre dans ce domaine en
+                            constante évolution. Au fil de mon parcours, j’ai pu me former sur plusieurs langages de
+                            programmation, notamment Python, Java, HTML, CSS, JavaScript, SQL et PHP.</p>
+                    </div>
+                </article>
+
+                <article class="flex max-w-xl flex-col items-start justify-between">
+                    <img src="./img/Capture d’écran 2025-10-17 203007.png" width="125vw" alt="Marketing image"
+                        class="w-full rounded-lg mb-4">
+                    <div class="group relative grow">
+                        <h3 class="mt-3 text-lg/6 font-semibold text-white ">
+                            <span class="absolute"></span>
+                            Mes projets
+                        </h3>
+                        <p class="mt-5 line-clamp-10 text-sm/6 text-gray-400">
+                            Je possède un compte GitHub <a href="https://github.com/Driss2003costa" target="_blank"
+                                rel="noopener noreferrer" class="text-white hover:text-white-100 transition"">ICI</a> où je centralise l’ensemble des projets que j’ai réalisés,
+                            incluant aussi bien des applications complètes que des démonstrations techniques. Vous y
+                            trouverez également des dépôts complémentaires regroupant des expérimentations, des
+                            composants d’interface utilisateur, ainsi que divers tests et prototypes, témoignant de ma
+                            curiosité et de ma volonté constante d’explorer de nouvelles approches en développement.
+                        </p>
+                    </div>
+                </article>
+
+
+                <article class=" flex max-w-xl flex-col items-start justify-between">
+
+
+                                <div class="group relative grow">
+                                    <p class="mt-5 line-clamp-3 text-sm/6 text-gray-400"></p>
+                                </div>
+                </article>
+            </div>
+            <div
+                class=" flex justify-between items-center flex-col border-t border-gray-700 pt-10 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl mb-6">Mon projet
+                    actuel</h2>
+                <article class="flex max-w-4xl flex-col items-start justify-between mt-4">
+                    <video src="./video/2025-10-19 14-47-04.mp4" width="125vw" alt="Marketing image"
+                        class="w-full rounded-lg mb-4" autoplay="true" loop="true" muted></video>
+
+                    <div class="group relative grow">
+                        <h3 class="mt-3 text-lg/6 font-semibold text-white ">
+                            <span class="absolute"></span>
+                            Critoz (Anciennement DrissCritique)
+                        </h3>
+                        <p class="mt-5 line-clamp-16 text-sm/6 text-gray-400">La création de ce site est avant tout le
+                            fruit de deux passions qui m’animent depuis longtemps : le développement informatique et le
+                            cinéma. J’ai toujours été fasciné par la manière dont la technologie peut enrichir
+                            l’expérience cinématographique, en facilitant l’accès aux œuvres, mais aussi en permettant
+                            aux spectateurs de s’exprimer librement et de partager leurs opinions.<br><br>
+
+                            Il existe aujourd’hui des plateformes bien établies dans ce domaine, comme AlloCiné, qui
+                            proposent un large éventail de fonctionnalités : fiches de films, actualités,
+                            bandes-annonces, critiques presse, horaires de cinéma, émissions, interviews, et bien plus
+                            encore. Toutefois, selon moi, cette surabondance de services finit par desservir
+                            l’utilisateur.
+
+                            L’interface peut paraître chargée, parfois même confuse, et la navigation devient complexe
+                            pour un simple spectateur qui souhaite uniquement consulter des avis ou partager ses
+                            impressions sur un film.
+                            AlloCiné cible un public très large, ce qui l’amène à proposer des contenus parfois peu
+                            pertinents pour une partie des utilisateurs.<br><br>
+
+                            Par exemple, les nombreuses informations promotionnelles, les encarts publicitaires ou
+                            encore les critiques de professionnels peuvent étouffer la voix du spectateur lambda, qui
+                            peut se sentir noyé dans une masse de données, voire découragé de publier son propre avis.
+
+                            C’est précisément dans cette optique que mon projet prend tout son sens : concevoir une
+                            plateforme centrée sur l’essentiel. Mon objectif est de proposer un site à la fois moderne,
+                            épuré et intuitif, qui place l’utilisateur au cœur de l’expérience. Un site où chacun peut
+                            facilement découvrir un film, lire des impressions authentiques d'autres spectateurs, et
+                            surtout, partager son opinion en quelques clics, sans être submergé par des fonctionnalités
+                            superflues.
+                            En résumé, mon projet ne cherche pas à concurrencer les géants du secteur, mais à répondre à
+                            un besoin spécifique : celui d’un espace simple, accessible et communautaire, dédié à
+                            l’échange d’avis cinématographiques entre passionnés.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

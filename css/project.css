@@ -1,0 +1,187 @@
+:root{
+    --darkpurple: rgb(17, 0, 32);
+    --white: white;
+    --black: rgb(0, 0, 0);
+}
+
+.container{
+    width: 100px;
+    height: 100px;
+    background-color: var(--purple);
+    border-radius: 20px;
+    transition: width 2s ease, height 2s ease;
+    transition-delay: 3s;
+    overflow: hidden;
+
+}
+.grid{
+    width: 100px;
+    height: 100px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    transition-delay: 10s;
+    transition: all 15s ease;
+}
+
+.parent{
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 50px;
+    height: 50px;
+    place-items: center;
+    transition: all 5.5s ease;
+    transition-delay: 10s;
+}
+
+.parent > div {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.parent > div > a {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+.parent:hover > div > a {
+    opacity: 1;
+}
+
+.container:hover{
+    width: 500px;
+    height: 500px;
+    border-radius: 50px;
+    transition-delay: 0s;
+}
+
+.container:hover > .grid > .parent {
+    width: 50%;
+    height: 50%;
+    transition-delay: 5s;
+    transition: all 10s ease;
+}
+
+.container:hover > .grid{
+    width: 100%;
+    height: 100%;
+    transition-delay: 1s;
+    transition: all 1s ease;
+}
+
+
+.container:hover > .grid > .parent > .game {
+    transform: translate(-100px, -100px);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.container:hover > .grid > .parent > .social {
+    transform: translate(0px, -100px);
+    width: 100%;
+    height: 100%;
+}
+.container:hover > .grid > .parent > .music {
+    transform: translate(100px, -100px);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.container:hover > .grid > .parent > .play {
+    transform: translate(-100px, 0px);
+    width: 100%;
+    height: 100%;
+}
+.container:hover > .grid > .parent > .food {
+    transform: translate(0px, 0px);
+    transition-delay: 2.5s;
+    width: 100%;
+    height: 100%;
+}
+.container:hover > .grid > .parent > .dev {
+    transform: translate(100px, 0px);
+    width: 100%;
+    height: 100%;
+}
+.container:hover > .grid > .parent > .glasses {
+    transform: translate(-100px, 100px);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.container:hover > .grid > .parent > .dark {
+    transform: translate(0px, 100px);
+    width: 100%;
+    height: 100%;
+}
+.container:hover > .grid > .parent > .bitcoin { 
+    transform: translate(100px, 100px);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.game{
+    transition: all 2s ease;
+    transition-delay: 0.5s;
+}
+.social{
+    transition: all 2s ease;
+    transition-delay: 0.8s;
+}
+.music{
+    transition: all 2s ease;
+    transition-delay: 1.2s;
+}
+.play{
+    transition: all 2s ease;
+    transition-delay: 1.6s;
+}
+.food{
+    transition: all 2s ease;
+    transition-delay: 3.5s;
+}
+.dev{
+    transition: all 2s ease;
+    transition-delay: 2s;
+}
+.glasses{
+    transition: all 2s ease;
+    transition-delay: 2.4s;
+}
+.dark{
+    transition: all 2s ease;
+    transition-delay: 2.8s;
+}
+.bitcoin{
+    transition: all 2s ease;
+    transition-delay: 3.2s;
+}
+
+.icon{
+    width: 50%;
+    opacity: 1;
+    filter: invert();
+}
+
+.flexcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    transition: all 2s ease;
+}
+
+.game:hover img, .social:hover img, .music:hover img, .play:hover img, .food:hover img, .dev:hover img, .glasses:hover img, .dark:hover img, .bitcoin:hover img{
+    filter: invert(20%) saturate(5000%) hue-rotate(-10deg) brightness(1) drop-shadow(0 0 20px rgb(255, 255, 255));
+}
+button{
+    background: none;
+    border: none;
+}
+a{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <nav
+        class="relative bg-gray-800/50 after:pointer-events-none after:absolute after-0 after:bottom-0 after:h-px after:bg-white/10">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button" command="--toggle" commandfor="mobile-menu"
+                        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+                        <span class="absolute .5"></span>
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex shrink-0 items-center">
+                        <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                            alt="Your Company" class="h-8 w-auto" />
+                    </div>
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="./index.html" aria-current="page"
+                                class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white">Qui je suis
+                                ?</a>
+                            <a href="./project.html"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
+                                projets actuel</a>
+                            <a href="#"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
+                                formations</a>
+                            <a href="#"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
+                                compétences</a>
+                            <a href="./loisirs.html"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Loisirs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+            <div class="space-y-1 px-2 pt-2 pb-3">
+                <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+                <a href="#" aria-current="page"
+                    class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
+            </div>
+        </el-disclosure>
+    </nav>
+
+
+
+    <div class="bg-gray-900 min-h-screen py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:mx-0">
+                <h1 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Musiques</h1>
+                <p class="text-m tracking-tight text-pretty text-white sm:text-m mt-8">Pendant mon temps libre, je
+                    compose des musiques de type Motion Picture Music, un genre que l’on retrouve dans les films, les
+                    séries ou les jeux vidéo. <br>Il s'agit de compositions narratives, conçues pour accompagner et
+                    intensifier une scène visuelle. J'utilise le logiciel professionnel Ableton Live 12 Suite pour
+                    donner vie à mes idées musicales. <br><br>Cette passion, que je cultive depuis l'âge de 19 ans,
+                    m'anime
+                    profondément et me pousse constamment à explorer de nouvelles émotions et ambiances sonores.</p>
+            </div>
+            <div
+                class="flex mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-700 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <article class="flex max-w-xl flex-col items-start justify-between">
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2192751655%3Fsecret_token%3Ds-uRNm7M4uCQq&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/sunwhy-official" title="SunWhy Official" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">SunWhy Official</a> · <a
+                            href="https://soundcloud.com/sunwhy-official/time-out3/s-uRNm7M4uCQq"
+                            title="Highest Mountain" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">Highest Mountain</a>
+                    </div>
+                </article>
+                <article class="flex max-w-xl flex-col items-start justify-between">
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2172253173%3Fsecret_token%3Ds-Egmnw1Jc4X2&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/sunwhy-official" title="SunWhy Official" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">SunWhy Official</a> · <a
+                            href="https://soundcloud.com/sunwhy-official/matrix/s-Egmnw1Jc4X2"
+                            title="Matrix Music Scene" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">Matrix Music Scene</a>
+                    </div>
+                </article>
+                <article class="flex max-w-xl flex-col items-start justify-between">
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2182888775&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/sunwhy-official" title="SunWhy Official" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">SunWhy Official</a> · <a
+                            href="https://soundcloud.com/sunwhy-official/to-the-summit" title="To the summit"
+                            target="_blank" style="color: #cccccc; text-decoration: none;">To the summit</a>
+                    </div>
+                </article>
+            </div>
+
+            <div
+                class="flex flex-col mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-700 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <div class="w-xl">
+                    <h1 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Films/Series
+                    </h1>
+                    <p class="text-m tracking-tight text-pretty text-white sm:text-m mt-8">Depuis mon enfance, je suis
+                        passionné par le cinéma et les séries. J’en regarde presque quotidiennement, généralement après
+                        avoir terminé mes tâches ou projets. C’est un moment à la fois apaisant et enrichissant, qui me
+                        permet de me détendre tout en nourrissant ma culture générale et mon sens de la narration.</p>
+                </div>
+            </div>
+            <div
+                class="mx-auto mt-8 grid max-w-100 auto-rows-fr grid-cols-1 gap-8 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-5 lg:px-50">
+                <div><img src="./img/oppen.jpg" class="rounded-sm" alt="" srcset=""
+                        style="width: 100%; height: 200px; object-fit: cover;"><small>★★★★★</small></div>
+                <div><img src="./img/atlantis.jpg" class="rounded-sm" alt="" srcset=""
+                        style="width: 100%; height: 200px; object-fit: cover;"><small>★★★★★</small></div>
+                <div><img src="./img/breaking.jpg" class="rounded-sm" alt="" srcset=""
+                        style="width: 100%; height: 200px; object-fit: cover;"><small>★★★★★</small></div>
+                <div><img src="./img/dark.jpg" class="rounded-sm" alt="" srcset=""
+                        style="width: 100%; height: 200px; object-fit: cover;"><small>★★★★★</small></div>
+                <div><img src="./img/F1.jpg" class="rounded-sm" alt="" srcset=""
+                        style="width: 100%; height: 200px; object-fit: cover;"><small>★★★★★</small></div>
+                <div><img src="./img/montecristo.jpg" class="rounded-sm" alt="" srcset=""
+                        style="width: 100%; height: 200px; object-fit: cover;"><small>★★★★★</small></div>
+                <div><img src="./img/pianist.jpg" class="rounded-sm" alt="" srcset=""
+                        style="width: 100%; height: 200px; object-fit: cover;"><small>★★★★★</small></div>
+                <div><img src="./img/spider.jpg" class="rounded-sm" alt="" srcset=""
+                        style="width: 100%; height: 200px; object-fit: cover;"><small>★★★★★</small></div>
+                <div><img src="./img/titanic.jpg" class="rounded-sm" alt="" srcset=""
+                        style="width: 100%; height: 200px; object-fit: cover;"><small>★★★★★</small></div>
+                <div><img src="./img/topgun.jpg" class="rounded-sm" alt="" srcset=""
+                        style="width: 100%; height: 200px; object-fit: cover;"><small>★★★★★</small></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
