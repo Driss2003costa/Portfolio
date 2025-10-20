@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <nav
+        class="relative bg-gray-800/100 after:pointer-events-none after:absolute after-0 after:bottom-0 after:h-px after:bg-white/10">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-center">
+                <div class="absolute-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button" command="--toggle" commandfor="mobile-menu"
+                        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+                        <span class="absolute .5"></span>
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex shrink-0 items-center">
+                        <img src="./img/logo.png" alt="Driss Logo" class="h-8 w-auto rounded-full" />
+                    </div>
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="./index.html" aria-current="page"
+                                class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white">Qui je suis
+                                ?</a>
+                            <a href="./project.html"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
+                                projets actuel</a>
+                            <a href="#"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
+                                formations</a>
+                            <a href="#"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
+                                compétences</a>
+                            <a href="./loisirs.html"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Loisirs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+            <div class="space-y-1 px-2 pt-2 pb-3">
+                <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+                <a href="#" aria-current="page"
+                    class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
+            </div>
+        </el-disclosure>
+    </nav>
+    <div class="bg-gray-900 min-h-screen py-12 sm:py-16">
+        <div class="bg-gray-900 py-10 sm:py-10">
+            <h1 class="text-3xl font-semibold tracking-tight text-pretty text-white sm:text-4xl text-center mb-9">
+                Developpeur FullStack</h1>
+            <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12">
+                <h5 class="text-1xl font-semibold tracking-tight text-pretty text-white sm:text-2xl mb-4 ">
+                    Front-End</h5>
+                <dl class="grid grid-cols-1 gap-x-2 gap-y-16 text-center lg:grid-cols-5 mt-9">
+                    <div
+                        class="relative mx-auto flex max-w-xs flex-col group gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-l-2xl ">
+
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            HTML
+                        </span>
+
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+                            <img src="./img/html-5.png" width="100px">
+                        </dd>
+                    </div>
+                    <div class="relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5">
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            CSS
+                        </span>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl"><img
+                                src="./img/css-3.png" width="100px">
+                    </div>
+                    <div class=" relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5">
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            JavaScript
+                        </span>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl"><img
+                                src="./img/java-script.png" width="100px"></dd>
+                    </div>
+                    <div class=" relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5">
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            Tailwinds
+                        </span>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl"><img
+                                src="./img/file-type-tailwind-icon-md-1538507606.png" width="100px"></dd>
+                    </div>
+                    <div
+                        class=" relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-r-2xl">
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            Bootstrap
+                        </span>
+                        <dd class="order-first  text-3xl font-semibold tracking-tight text-white sm:text-5xl"><img
+                                src="./img/62a76492bd73a4af5c5d4fb9-3463723475.png" width="100px"></dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+
+        <div class="bg-gray-900">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <h5
+                    class="text-1xl font-semibold tracking-tight text-pretty text-white sm:text-2xl mb-4 sm:ml-0 lg:ml-62">
+                    Back-End</h5>
+                <dl class="grid grid-cols-1 gap-x-2 gap-y-16 text-center lg:grid-cols-5 sm:mt-0 lg:mt-0">
+                    <div class="relative mx-auto flex max-w-xs flex-col gap-y-4 px-20 py-5 rounded-l-2xl">
+                    </div>
+                    <div
+                        class="relative group mx-auto flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-l-2xl">
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            PHP
+                        </span>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl"><img
+                                src="./img/php.png" width="100px">
+                    </div>
+                    <div class="relative group mx-auto flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5">
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            Symfony
+                        </span>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl"><img
+                                src="./img/FontAwesome-Brands-Symfony-icon-1238674097.png" width="100px"></dd>
+                    </div>
+                    <div
+                        class="relative group mx-auto flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-r-2xl">
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            SQL
+                        </span>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl"><img
+                                src="./img/sql-server.png" width="100px"></dd>
+                    </div>
+                    <div class="mx-auto flex max-w-xs flex-col gap-y-4 px-20 py-5 rounded-r-2xl">
+                    </div>
+                </dl>
+                <div
+                    class=" flex justify-between items-center flex-col border-t border-gray-700 pt-10 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                </div>
+            </div>
+
+            <div class="mx-auto max-w-xl px-6 lg:px-8 mt-6">
+                <h5
+                    class="text-2xl font-semibold tracking-tight text-pretty text-center text-white sm:text-2xl mb-4 sm:ml-0 lg:ml-0">
+                    Autres Langages apprises</h5>
+                <dl class="grid grid-cols-1 gap-x-2 gap-y-16 text-center lg:grid-cols-2 sm:mt-0 lg:mt-0">
+                    <div class="relative group flex justify-center gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-l-2xl w-full">
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            Python
+                        </span>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+                            <img src="./img/python.png" width="100px">
+                        </dd>
+                    </div>
+
+                    <div class="relative group flex justify-center gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-r-2xl w-full">
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            JAVA
+                        </span>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+                            <img src="./img/java.png" width="100px">
+                        </dd>
+                    </div>
+                </dl>
+                <div
+                    class=" flex justify-between items-center flex-col border-t border-gray-700 pt-10 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 mt-25">
+                </div>
+            </div>
+
+
+            <div class="mx-auto max-w-sm px-6 lg:px-8 mt-6">
+                <h5
+                    class="text-2xl font-semibold tracking-tight text-pretty text-center text-white sm:text-2xl mb-4 sm:ml-0 lg:ml-0">
+                    Langues apprises</h5>
+                <dl class="grid grid-cols-1 gap-x-2 gap-y-16 text-center lg:grid-cols-! sm:mt-0 lg:mt-9">
+                    <div class="relative group flex justify-center gap-y-4 bg-gray-300 px-20 py-5 rounded-2xl w-full">
+                        <span
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            Anglais > Niveau B2
+                        </span>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+                            <img src="./img/american.png" width="100px">
+                        </dd>
+                    </div>
+                </dl>
+                <div
+                    class=" flex justify-between items-center flex-col border-t border-gray-700 pt-10 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 mt-25">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

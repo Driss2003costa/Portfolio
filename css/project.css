@@ -60,7 +60,7 @@
     width: 50%;
     height: 50%;
     transition-delay: 5s;
-    transition: all 10s ease;
+    transition: all 6s ease;
 }
 
 .container:hover > .grid{
