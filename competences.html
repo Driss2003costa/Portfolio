@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js" defer></script>
 </head>
 
 <body>
+    <div id="app"></div>
     <nav
         class="relative bg-gray-800/100 after:pointer-events-none after:absolute after-0 after:bottom-0 after:h-px after:bg-white/10">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -50,27 +52,47 @@
                                 compétences</a>
                             <a href="./loisirs.html"
                                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Loisirs</a>
+                            <div class="flex justify-center items-center" x-data="{toggle: '0'}">
+                                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
+                                    defer></script>
+                                <div x-data="{ toggle: '0' }" :class="toggle === '1' ? 'text-xl' : 'text-base'"
+                                    class="transition-all duration-500">
+                                    <div class="flex gap-3 items-center ml-6">
+                                        <small class="text-white">Aa</small>
+                                        <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
+                                            :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
+                                            <label for="toggle"
+                                                class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer"
+                                                :class="[toggle === '1' ? 'translate-x-full border-green-400' : 'translate-x-0 border-gray-400']"></label>
+                                            <input type="checkbox" id="toggle" name="toggle"
+                                                class="appearance-none w-full h-full active:outline-none focus:outline-none"
+                                                @click="toggle === '0' ? toggle = '1' : toggle = '0'" />
+                                        </div>
+                                        <p class="text-white text-xl">Aa</p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
-            <div class="space-y-1 px-2 pt-2 pb-3">
-                <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                <a href="#" aria-current="page"
-                    class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Dashboard</a>
-                <a href="#"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
-                <a href="#"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
-                <a href="#"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
-            </div>
-        </el-disclosure>
+            <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+                <div class="space-y-1 px-2 pt-2 pb-3">
+                    <a href="#" aria-current="page"
+                        class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
+                </div>
+            </el-disclosure>
     </nav>
-    <div class="bg-gray-900 min-h-screen py-12 sm:py-16">
-        <div class="bg-gray-900 py-10 sm:py-10">
+    <div class="body bg-gray-900 min-h-screen py-12 sm:py-16">
+        <div class="bg-gray-900 py-10 sm:py-10 relative z-10">
+
             <h1 class="text-3xl font-semibold tracking-tight text-pretty text-white sm:text-4xl text-center mb-9">
                 Developpeur FullStack</h1>
             <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12">
@@ -78,10 +100,10 @@
                     Front-End</h5>
                 <dl class="grid grid-cols-1 gap-x-2 gap-y-16 text-center lg:grid-cols-5 mt-9">
                     <div
-                        class="relative mx-auto flex max-w-xs flex-col group gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-l-2xl animate-fadeIn delay-0">
+                        class="relative mx-auto flex max-w-xs flex-col group gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-l-2xl animate-fadeIn delay-0 scale-x-100">
 
                         <span
-                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:transform-sca transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             HTML
                         </span>
 
@@ -90,7 +112,7 @@
                         </dd>
                     </div>
                     <div
-                        class="relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 delay-500 animate-fadeIn delay-200">
+                        class="relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 delay-500 animate-fadeIn delay-200 scale-x-100">
                         <span
                             class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             CSS
@@ -99,7 +121,7 @@
                                 src="./img/css-3.png" width="100px">
                     </div>
                     <div
-                        class=" relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 animate-fadeIn delay-400">
+                        class=" relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 animate-fadeIn delay-400 scale-x-100">
                         <span
                             class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             JavaScript
@@ -108,7 +130,7 @@
                                 src="./img/java-script.png" width="100px"></dd>
                     </div>
                     <div
-                        class=" relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 animate-fadeIn delay-600">
+                        class=" relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 animate-fadeIn delay-600 scale-x-100">
                         <span
                             class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             Tailwinds
@@ -117,7 +139,7 @@
                                 src="./img/file-type-tailwind-icon-md-1538507606.png" width="100px"></dd>
                     </div>
                     <div
-                        class=" relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-r-2xl animate-fadeIn delay-800">
+                        class=" relative mx-auto group flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-r-2xl animate-fadeIn delay-800 scale-x-100">
                         <span
                             class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             Bootstrap
@@ -140,7 +162,7 @@
                         class="relative mx-auto flex max-w-xs flex-col gap-y-4 px-20 py-5 rounded-l-2xl animate-fadeIn">
                     </div>
                     <div
-                        class="relative group mx-auto flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-l-2xl animate-fadeIn">
+                        class="relative group mx-auto flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-l-2xl animate-fadeIn scale-x-100">
                         <span
                             class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             PHP
@@ -149,7 +171,7 @@
                                 src="./img/php.png" width="100px">
                     </div>
                     <div
-                        class="relative group mx-auto flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 animate-fadeIn">
+                        class="relative group mx-auto flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 animate-fadeIn scale-x-100">
                         <span
                             class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             Symfony
@@ -158,7 +180,7 @@
                                 src="./img/FontAwesome-Brands-Symfony-icon-1238674097.png" width="100px"></dd>
                     </div>
                     <div
-                        class="relative group mx-auto flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-r-2xl animate-fadeIn">
+                        class="relative group mx-auto flex max-w-xs flex-col gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-r-2xl animate-fadeIn scale-x-100">
                         <span
                             class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             SQL
@@ -180,7 +202,7 @@
                     Autres Langages apprises</h5>
                 <dl class="grid grid-cols-1 gap-x-2 gap-y-16 text-center lg:grid-cols-2 sm:mt-0 lg:mt-0">
                     <div
-                        class="relative group flex justify-center gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-l-2xl w-full animate-fadeIn">
+                        class="relative group flex justify-center gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-l-2xl w-full animate-fadeIn scale-x-100">
                         <span
                             class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             Python
@@ -191,7 +213,7 @@
                     </div>
 
                     <div
-                        class="relative group flex justify-center gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-r-2xl w-full animate-fadeIn">
+                        class="relative group flex justify-center gap-y-4 bg-gray-300 px-20 py-5 lg:rounded-r-2xl w-full animate-fadeIn scale-x-100">
                         <span
                             class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             JAVA
@@ -213,7 +235,7 @@
                     Langues apprises</h5>
                 <dl class="grid grid-cols-1 gap-x-2 gap-y-16 text-center lg:grid-cols-! sm:mt-0 lg:mt-9">
                     <div
-                        class="relative group flex justify-center gap-y-4 bg-gray-300 px-20 py-5 rounded-2xl w-full animate-fadeIn">
+                        class="relative group flex justify-center gap-y-4 bg-gray-300 px-20 py-5 rounded-2xl w-full animate-fadeIn scale-x-100">
                         <span
                             class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-blue-900 text-white text-xs rounded px-2 py-1">
                             Anglais > Niveau B2
@@ -264,7 +286,17 @@
         .animate-fadeIn {
             animation: fadeIn 1.5s ease-in-out;
         }
+
+        .scale-x-100 {
+            transition: transform 1s ease;
+        }
+
+        .scale-x-100:hover {
+            transform: scale(1.05);
+        }
     </style>
+
+    <script src="./js/comp.js"></script>
 </body>
 
 </html>

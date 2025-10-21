@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
+<body x-data="{ toggle: false }" :class="toggle ? 'text-lg' : 'text-base'">
     <nav
         class="relative bg-gray-800/100 after:pointer-events-none after:absolute after-0 after:bottom-0 after:h-px after:bg-white/10">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -32,8 +32,7 @@
                 </div>
                 <div class="flex items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="flex shrink-0 items-center">
-                        <img src="./img/logo.png"
-                            alt="Driss Logo" class="h-8 w-auto rounded-full" />
+                        <img src="./img/logo.png" alt="Driss Logo" class="h-8 w-auto rounded-full" />
                     </div>
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
@@ -51,6 +50,27 @@
                                 compétences</a>
                             <a href="./loisirs.html"
                                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Loisirs</a>
+
+                            <div class="flex justify-center items-center" x-data="{toggle: '0'}">
+                                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
+                                    defer></script>
+                                <div x-data="{ toggle: '0' }" :class="toggle === '1' ? 'text-xl' : 'text-base'"
+                                    class="transition-all duration-500">
+                                    <div class="flex gap-3 items-center ml-6">
+                                        <small class="text-white">Aa</small>
+                                        <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
+                                            :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
+                                            <label for="toggle"
+                                                class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer"
+                                                :class="[toggle === '1' ? 'translate-x-full border-green-400' : 'translate-x-0 border-gray-400']"></label>
+                                            <input type="checkbox" id="toggle" name="toggle"
+                                                class="appearance-none w-full h-full active:outline-none focus:outline-none"
+                                                @click="toggle === '0' ? toggle = '1' : toggle = '0'" />
+                                        </div>
+                                        <p class="text-white text-xl">Aa</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,25 +186,12 @@
                             encore. Toutefois, selon moi, cette surabondance de services finit par desservir
                             l’utilisateur.
 
-                            L’interface peut paraître chargée, parfois même confuse, et la navigation devient complexe
-                            pour un simple spectateur qui souhaite uniquement consulter des avis ou partager ses
-                            impressions sur un film.
-                            AlloCiné cible un public très large, ce qui l’amène à proposer des contenus parfois peu
-                            pertinents pour une partie des utilisateurs.<br><br>
-
-                            Par exemple, les nombreuses informations promotionnelles, les encarts publicitaires ou
-                            encore les critiques de professionnels peuvent étouffer la voix du spectateur lambda, qui
-                            peut se sentir noyé dans une masse de données, voire découragé de publier son propre avis.
-
                             C’est précisément dans cette optique que mon projet prend tout son sens : concevoir une
                             plateforme centrée sur l’essentiel. Mon objectif est de proposer un site à la fois moderne,
                             épuré et intuitif, qui place l’utilisateur au cœur de l’expérience. Un site où chacun peut
                             facilement découvrir un film, lire des impressions authentiques d'autres spectateurs, et
                             surtout, partager son opinion en quelques clics, sans être submergé par des fonctionnalités
-                            superflues.
-                            En résumé, mon projet ne cherche pas à concurrencer les géants du secteur, mais à répondre à
-                            un besoin spécifique : celui d’un espace simple, accessible et communautaire, dédié à
-                            l’échange d’avis cinématographiques entre passionnés.</p>
+                            superflues.</p>
                     </div>
                 </article>
             </div>
