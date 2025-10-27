@@ -26,3 +26,5 @@ Framework / Librairie : Tailwinds
 Outils : GitHub, VSCode
 
 Déploiement : Netlify
+
+[Lien du portfolio](https://kaleidoscopic-baklava-e8d693.netlify.app/)
