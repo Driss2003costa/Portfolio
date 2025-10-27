@@ -10,35 +10,44 @@
 
 <body>
     <nav
-        class="relative bg-gray-900/100 after:pointer-events-none after:absolute after-0 after:bottom-0 after:h-px after:bg-white/10">
+        class="relative bg-gray-800/100 after:pointer-events-none after:absolute after-0 after:bottom-0 after:h-px after:bg-white/10">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-center">
                 <div class="absolute-0 left-0 flex items-center sm:hidden">
-                    <!-- Mobile menu button-->
-                    <button type="button" command="--toggle" commandfor="mobile-menu"
-                        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
-                        <span class="absolute .5"></span>
-                        <span class="sr-only">Open main menu</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-                            aria-hidden="true" class="size-6 in-aria-expanded:hidden">
-                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-                            aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
-                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
+                    <div class="relative">
+                        <button type="button" command="--toggle" commandfor="mobile-dropdown"
+                            class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/20">
+                            <svg viewBox="0 0 20 20" fill="currentColor" class="-mr-1 size-5 text-gray-400">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                            </svg>
+                        </button>
+
+                        <div id="mobile-dropdown" hidden
+                            class="absolute right-0 mt-2 w-56 rounded-md bg-gray-800 text-gray-300 shadow-lg py-1 z-50">
+                            <a href="./index.html"
+                                class="block px-4 py-2 text-sm hover:bg-white/5 hover:text-white rounded-md">Qui
+                                je suis ?</a>
+                            <a href="./project.html"
+                                class="block px-4 py-2 text-sm hover:bg-white/5 hover:text-white rounded-md">Projet</a>
+                            <a href="./competences.html"
+                                class="block px-4 py-2 text-sm hover:bg-white/5 hover:text-white rounded-md">competences</a>
+                            <a href="./formations.html"
+                                class="block px-4 py-2 text-sm hover:bg-white/5 hover:text-white rounded-md">Formations</a>
+                            <a href="./loisirs.html"
+                                class="block px-4 py-2 text-sm hover:bg-white/5 hover:text-white rounded-md">Loisirs</a>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="flex items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="flex shrink-0 items-center">
-                        <img src="./img/logo.png"
-                            alt="Driss Logo" class="h-8 w-auto rounded-full" />
+                        <img src="./img/logo.png" alt="Driss Logo" class="h-8 w-auto rounded-full" />
                     </div>
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
                             <a href="./index.html" aria-current="page"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-white">Qui je suis
+                                class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white">Qui je suis
                                 ?</a>
                             <a href="./project.html"
                                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
@@ -50,7 +59,28 @@
                                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Mes
                                 compétences</a>
                             <a href="./loisirs.html"
-                                class="rounded-md px-3 bg-gray-950/50  py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Loisirs</a>
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Loisirs</a>
+
+                            <div class="flex justify-center items-center" x-data="{toggle: '0'}">
+                                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
+                                    defer></script>
+                                <div x-data="{ toggle: '0' }" :class="toggle === '1' ? 'text-xl' : 'text-base'"
+                                    class="transition-all duration-500">
+                                    <div class="flex gap-3 items-center ml-6">
+                                        <small class="text-white">Aa</small>
+                                        <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
+                                            :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
+                                            <label for="toggle"
+                                                class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer"
+                                                :class="[toggle === '1' ? 'translate-x-full border-green-400' : 'translate-x-0 border-gray-400']"></label>
+                                            <input type="checkbox" id="toggle" name="toggle"
+                                                class="appearance-none w-full h-full active:outline-none focus:outline-none"
+                                                @click="toggle === '0' ? toggle = '1' : toggle = '0'" />
+                                        </div>
+                                        <p class="text-white text-xl">Aa</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -58,7 +88,6 @@
         </div>
         <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
             <div class="space-y-1 px-2 pt-2 pb-3">
-                <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                 <a href="#" aria-current="page"
                     class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Dashboard</a>
                 <a href="#"
@@ -138,25 +167,35 @@
             <div
                 class="mx-auto mt-8 grid max-w-100 auto-rows-fr grid-cols-1 gap-8 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-5 lg:px-50">
                 <div><img src="./img/oppen.jpg" class="rounded-sm" alt="" srcset=""
-                        style="width: 100%; height: 200px; object-fit: cover;"><small class="text-yellow-400">★★★★★</small></div>
+                        style="width: 100%; height: 200px; object-fit: cover;"><small
+                        class="text-yellow-400">★★★★★</small></div>
                 <div><img src="./img/atlantis.jpg" class="rounded-sm" alt="" srcset=""
-                        style="width: 100%; height: 200px; object-fit: cover;"><small class="text-yellow-400">★★★★★</small></div>
+                        style="width: 100%; height: 200px; object-fit: cover;"><small
+                        class="text-yellow-400">★★★★★</small></div>
                 <div><img src="./img/breaking.jpg" class="rounded-sm" alt="" srcset=""
-                        style="width: 100%; height: 200px; object-fit: cover;"><small class="text-yellow-400">★★★★★</small></div>
+                        style="width: 100%; height: 200px; object-fit: cover;"><small
+                        class="text-yellow-400">★★★★★</small></div>
                 <div><img src="./img/dark.jpg" class="rounded-sm" alt="" srcset=""
-                        style="width: 100%; height: 200px; object-fit: cover;"><small class="text-yellow-400">★★★★★</small></div>
+                        style="width: 100%; height: 200px; object-fit: cover;"><small
+                        class="text-yellow-400">★★★★★</small></div>
                 <div><img src="./img/F1.jpg" class="rounded-sm" alt="" srcset=""
-                        style="width: 100%; height: 200px; object-fit: cover;"><small class="text-yellow-400">★★★★★</small></div>
+                        style="width: 100%; height: 200px; object-fit: cover;"><small
+                        class="text-yellow-400">★★★★★</small></div>
                 <div><img src="./img/montecristo.jpg" class="rounded-sm" alt="" srcset=""
-                        style="width: 100%; height: 200px; object-fit: cover;"><small class="text-yellow-400">★★★★★</small></div>
+                        style="width: 100%; height: 200px; object-fit: cover;"><small
+                        class="text-yellow-400">★★★★★</small></div>
                 <div><img src="./img/pianist.jpg" class="rounded-sm" alt="" srcset=""
-                        style="width: 100%; height: 200px; object-fit: cover;"><small class="text-yellow-400">★★★★★</small></div>
+                        style="width: 100%; height: 200px; object-fit: cover;"><small
+                        class="text-yellow-400">★★★★★</small></div>
                 <div><img src="./img/spider.jpg" class="rounded-sm" alt="" srcset=""
-                        style="width: 100%; height: 200px; object-fit: cover;"><small class="text-yellow-400">★★★★★</small></div>
+                        style="width: 100%; height: 200px; object-fit: cover;"><small
+                        class="text-yellow-400">★★★★★</small></div>
                 <div><img src="./img/titanic.jpg" class="rounded-sm" alt="" srcset=""
-                        style="width: 100%; height: 200px; object-fit: cover;"><small class="text-yellow-400">★★★★★</small></div>
+                        style="width: 100%; height: 200px; object-fit: cover;"><small
+                        class="text-yellow-400">★★★★★</small></div>
                 <div><img src="./img/topgun.jpg" class="rounded-sm" alt="" srcset=""
-                        style="width: 100%; height: 200px; object-fit: cover;"><small class="text-yellow-400">★★★★★</small></div>
+                        style="width: 100%; height: 200px; object-fit: cover;"><small
+                        class="text-yellow-400">★★★★★</small></div>
             </div>
         </div>
     </div>
@@ -165,6 +204,7 @@
 
 
 
+    <script src="./js/index.js"></script>
 
 </body>
 
